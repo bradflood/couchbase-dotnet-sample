@@ -36,17 +36,17 @@ class CloudExample
         var collection = await scope.CollectionAsync("_default").ConfigureAwait(false);
     
         // // Upsert Document
-        var upsertResult = await collection.UpsertAsync("last_successful_timestamp", new { Name = "UTC", Time = DateTime.UtcNow });
-        var getResult = await collection.GetAsync("last_successful_timestamp");
+        var upsertResult = await collection.UpsertAsync("last_successful_timestamp", new { Name = "UTC", Time = DateTime.UtcNow }).ConfigureAwait(false);
+        var getResult = await collection.GetAsync("last_successful_timestamp").ConfigureAwait(false);
         Console.WriteLine("inline: " + getResult.ContentAs<dynamic>());
 
-        accessbucket(cluster, "logs");
-        accessbucket(cluster, "render");
-        accessbucket(cluster, "renderaudio");
+        await accessbucket(cluster, "logs");
+        await accessbucket(cluster, "render");
+        await accessbucket(cluster, "renderaudio");
 
     }
 
-    private async void accessbucket(ICluster cluster, string bucketName) {
+    private async Task accessbucket(ICluster cluster, string bucketName) {
         Console.WriteLine("access bucket (in method accessbucket):" + bucketName);
         var bucket = await cluster.BucketAsync(bucketName).ConfigureAwait(false);
         var scope = await bucket.ScopeAsync("_default").ConfigureAwait(false);
@@ -54,9 +54,9 @@ class CloudExample
     
         // // Upsert Document
         var utcNow = DateTime.UtcNow;        
-        var upsertResult = await collection.UpsertAsync("last_successful_timestamp", new { Name = "UTC", Time = utcNow });
-        var getResult = await collection.GetAsync("last_successful_timestamp");
-        Console.WriteLine("method accessbucket:" + getResult.ContentAs<dynamic>());
+        var upsertResult = await collection.UpsertAsync("last_successful_timestamp", new { Name = "UTC", Time = utcNow }).ConfigureAwait(false);
+        var getResult = await collection.GetAsync("last_successful_timestamp").ConfigureAwait(false);
+        Console.WriteLine("method call result for " + bucketName + "..."+ getResult.ContentAs<dynamic>());
     }
 
 }
