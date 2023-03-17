@@ -30,3 +30,6 @@ dotnet new webapp -o WebApp1 --no-https -f net6.0
 dotnet watch
 
 WebApp1 works as expected - it updates the document "last_successful_timestamp" in buckets "logs" and "render"
+
+## WebApp2
+WebApp2 will build upon WebApp1 by introducing the FCBH BucketMapper
