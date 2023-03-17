@@ -23,7 +23,6 @@ class CloudExample
         }
         .WithConnectionString("couchbases://"+connection_string)
         .WithCredentials(username: userid, password: password)
-        // .WithBuckets(bucketList)
         .WithLogging(LoggerFactory.Create(builder => { builder.AddFilter("Couchbase", LogLevel.Debug).AddConsole(); }));
 
         var cluster = await Couchbase.Cluster.ConnectAsync(
@@ -42,7 +41,7 @@ class CloudExample
         var scope = await bucket.ScopeAsync("_default").ConfigureAwait(false);
         var collection = await scope.CollectionAsync("_default").ConfigureAwait(false);
     
-        // // Upsert Document
+        // Upsert Document
         var utcNow = DateTime.UtcNow;        
         var upsertResult = await collection.UpsertAsync("last_successful_timestamp", new { Name = "UTC", Time = utcNow }).ConfigureAwait(false);
         var getResult = await collection.GetAsync("last_successful_timestamp").ConfigureAwait(false);
