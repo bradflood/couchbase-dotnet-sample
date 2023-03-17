@@ -19,7 +19,6 @@ public class CouchbaseModel : PageModel
         Console.WriteLine("onGet couchbase");
         client.testLogsBucket("foo") ;
         client.testRenderBucket("foo2") ;
-        client.testRenderAudioBucket("foo3") ;
     }
 }
 

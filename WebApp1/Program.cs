@@ -28,7 +28,6 @@ builder.Services.AddCouchbase(clusterOptions =>
 
 builder.Services.AddCouchbaseBucket<ILogsBucketProvider>("logs");
 builder.Services.AddCouchbaseBucket<IRenderBucketProvider>("render"); 
-builder.Services.AddCouchbaseBucket<IRenderAudioBucketProvider>("renderaudio");
 
 builder.Services.AddScoped<ICouchbaseSDKClient, Client1>();
 
