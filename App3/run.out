@@ -1,0 +1,338 @@
+dbug: Couchbase.Core.Configuration.Server.ConfigHandler[0]
+      Waiting for 00:00:02.5000000 before polling.
+info: Couchbase.Core.ClusterContext[0]
+      Successfully retrieved DNS SRV entries: [svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207,svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207,svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207]
+dbug: Couchbase.Core.ClusterContext[0]
+      Bootstrapping: global bootstrapping with node svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207
+info: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Using the ChannelConnectionPool.
+dbug: Couchbase.Core.IO.Connections.MultiplexingConnection[0]
+      Setting TCP Keep-Alives using SocketOptions - enable keep-alives True, time 00:01:00, interval 00:00:01.
+dbug: Couchbase.Core.IO.Connections.MultiplexingConnection[0]
+      Setting TCP Keep-Alives using SocketOptions - enable keep-alives True, time 00:01:00, interval 00:00:01.
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsAuthenticated True on 3.90.58.242
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsSigned True on 3.90.58.242
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsEncrypted True on 3.90.58.242
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsAuthenticated True on 3.90.58.242
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsSigned True on 3.90.58.242
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsEncrypted True on 3.90.58.242
+dbug: Couchbase.Core.ClusterNode[1]
+      Starting connection initialization on server svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207.
+dbug: Couchbase.Core.ClusterNode[1]
+      Starting connection initialization on server svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Helo on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/f8a646d738f9ec24","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 3.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Helo on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/13986a1b71fddd5f","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 4.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Helo on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/f8a646d738f9ec24","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 3
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Helo on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/13986a1b71fddd5f","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 4
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op GetErrorMap on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 7.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op GetErrorMap on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 8.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op GetErrorMap on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 8
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op GetErrorMap on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 7
+dbug: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Connection for svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 has been started.
+dbug: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Connection for svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 has been started.
+dbug: Couchbase.Core.IO.Connections.DefaultConnectionPoolScaleController[0]
+      Starting connection pool monitor on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207, idle timeout 00:01:00, back pressure threshold 8
+dbug: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Connection pool for svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 initialized with 2 connections.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op GetClusterConfig on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 14.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op GetClusterConfig on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 14
+info: Couchbase.Core.ClusterContext[0]
+      NetworkResolution [default] using default svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com
+info: Couchbase.Core.ClusterContext[0]
+      Bootstrapping: initializing global bootstrap node [svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207].
+dbug: Couchbase.Core.ClusterContext[0]
+      Adding node svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 to .
+dbug: Couchbase.Core.ClusterContext[0]
+      Added node svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 to svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207-575d6a3d-12eb-40e9-8d74-434c813b7c6d
+info: Couchbase.Core.ClusterContext[0]
+      NetworkResolution [default] using default svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com
+info: Couchbase.Core.ClusterContext[0]
+      Bootstrapping: initializing a global non-bootstrap node [svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207]
+info: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Using the ChannelConnectionPool.
+dbug: Couchbase.Core.IO.Connections.MultiplexingConnection[0]
+      Setting TCP Keep-Alives using SocketOptions - enable keep-alives True, time 00:01:00, interval 00:00:01.
+dbug: Couchbase.Core.IO.Connections.MultiplexingConnection[0]
+      Setting TCP Keep-Alives using SocketOptions - enable keep-alives True, time 00:01:00, interval 00:00:01.
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsAuthenticated True on 54.224.131.220
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsSigned True on 54.224.131.220
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsEncrypted True on 54.224.131.220
+dbug: Couchbase.Core.ClusterNode[1]
+      Starting connection initialization on server svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Helo on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/c10eb892ca7b148f","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 16.
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsAuthenticated True on 54.224.131.220
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsSigned True on 54.224.131.220
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsEncrypted True on 54.224.131.220
+dbug: Couchbase.Core.ClusterNode[1]
+      Starting connection initialization on server svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Helo on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/5d343fd99fb506cf","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 18.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Helo on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/c10eb892ca7b148f","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 16
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op GetErrorMap on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 20.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Helo on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/5d343fd99fb506cf","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 18
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op GetErrorMap on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 22.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op GetErrorMap on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 20
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op GetErrorMap on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 22
+dbug: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Connection for svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 has been started.
+dbug: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Connection for svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 has been started.
+dbug: Couchbase.Core.IO.Connections.DefaultConnectionPoolScaleController[0]
+      Starting connection pool monitor on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207, idle timeout 00:01:00, back pressure threshold 8
+dbug: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Connection pool for svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 initialized with 2 connections.
+dbug: Couchbase.Core.ClusterContext[0]
+      Adding node svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 to svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207-575d6a3d-12eb-40e9-8d74-434c813b7c6d.
+dbug: Couchbase.Core.ClusterContext[0]
+      Added node svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 to svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207-575d6a3d-12eb-40e9-8d74-434c813b7c6d, svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207-2c24505a-9d64-4eea-a0c9-bc6819317e03
+info: Couchbase.Core.ClusterContext[0]
+      NetworkResolution [default] using default svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com
+info: Couchbase.Core.ClusterContext[0]
+      Bootstrapping: initializing a global non-bootstrap node [svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207]
+info: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Using the ChannelConnectionPool.
+dbug: Couchbase.Core.IO.Connections.MultiplexingConnection[0]
+      Setting TCP Keep-Alives using SocketOptions - enable keep-alives True, time 00:01:00, interval 00:00:01.
+dbug: Couchbase.Core.IO.Connections.MultiplexingConnection[0]
+      Setting TCP Keep-Alives using SocketOptions - enable keep-alives True, time 00:01:00, interval 00:00:01.
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsAuthenticated True on 3.80.213.98
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsSigned True on 3.80.213.98
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsEncrypted True on 3.80.213.98
+dbug: Couchbase.Core.ClusterNode[1]
+      Starting connection initialization on server svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Helo on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/02e664038968ad70","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 28.
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsAuthenticated True on 3.80.213.98
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsSigned True on 3.80.213.98
+dbug: Couchbase.Core.IO.Connections.SslConnection[0]
+      IsEncrypted True on 3.80.213.98
+dbug: Couchbase.Core.ClusterNode[1]
+      Starting connection initialization on server svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Helo on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/ead6df594e7a21bd","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 30.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Helo on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/ead6df594e7a21bd","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 30
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Helo on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/02e664038968ad70","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 28
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op GetErrorMap on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 32.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op GetErrorMap on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 34.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op GetErrorMap on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 34
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op GetErrorMap on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 32
+dbug: Couchbase.Core.Configuration.Server.ConfigHandler[0]
+      Done waiting, polling...
+dbug: Couchbase.Core.Configuration.Server.ConfigHandler[0]
+      Checking svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 in polling.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op GetClusterConfig on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 40.
+dbug: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Connection for svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 has been started.
+dbug: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Connection for svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 has been started.
+dbug: Couchbase.Core.IO.Connections.DefaultConnectionPoolScaleController[0]
+      Starting connection pool monitor on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207, idle timeout 00:01:00, back pressure threshold 8
+dbug: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Connection pool for svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 initialized with 2 connections.
+dbug: Couchbase.Core.ClusterContext[0]
+      Adding node svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 to svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207-575d6a3d-12eb-40e9-8d74-434c813b7c6d, svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207-2c24505a-9d64-4eea-a0c9-bc6819317e03.
+dbug: Couchbase.Core.ClusterContext[0]
+      Added node svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 to svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207-575d6a3d-12eb-40e9-8d74-434c813b7c6d, svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207-2c24505a-9d64-4eea-a0c9-bc6819317e03, svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207-2752826a-011e-4368-890d-f44cdd23223e
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op GetClusterConfig on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 40
+info: Couchbase.Query.QueryClient[0]
+      Enabling Enhanced Prepared Statements
+access bucket (inline):logs
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op SelectBucket on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key logs and opaque 41.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op SelectBucket on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key logs and opaque 42.
+dbug: Couchbase.Core.Configuration.Server.ConfigHandler[7000]
+      {"networkResolution":"auto","rev":185,"revEpoch":1,"name":"CLUSTER","uri":null,"streamingUri":null,"nodes":[],"nodesExt":[{"thisNode":true,"services":{"mgmt":8091,"mgmtSSL":18091,"indexAdmin":9100,"indexScan":9101,"indexHttp":9102,"indexStreamInit":9103,"indexStreamCatchup":9104,"indexStreamMaint":9105,"indexHttps":19102,"kv":11210,"kvSSL":11207,"capi":8092,"capiSSL":18092,"projector":9999,"n1ql":8093,"n1qlSSL":18093,"cbas":0,"cbasSSL":0,"fts":8094,"ftsSSL":18094,"moxi":0,"eventingAdminPort":0,"eventingSSL":0},"hostname":"svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com","alternateAddresses":null,"hasAlternateAddress":false},{"thisNode":false,"services":{"mgmt":8091,"mgmtSSL":18091,"indexAdmin":9100,"indexScan":9101,"indexHttp":9102,"indexStreamInit":9103,"indexStreamCatchup":9104,"indexStreamMaint":9105,"indexHttps":19102,"kv":11210,"kvSSL":11207,"capi":8092,"capiSSL":18092,"projector":9999,"n1ql":8093,"n1qlSSL":18093,"cbas":0,"cbasSSL":0,"fts":8094,"ftsSSL":18094,"moxi":0,"eventingAdminPort":0,"eventingSSL":0},"hostname":"svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com","alternateAddresses":null,"hasAlternateAddress":false},{"thisNode":false,"services":{"mgmt":8091,"mgmtSSL":18091,"indexAdmin":9100,"indexScan":9101,"indexHttp":9102,"indexStreamInit":9103,"indexStreamCatchup":9104,"indexStreamMaint":9105,"indexHttps":19102,"kv":11210,"kvSSL":11207,"capi":8092,"capiSSL":18092,"projector":9999,"n1ql":8093,"n1qlSSL":18093,"cbas":0,"cbasSSL":0,"fts":8094,"ftsSSL":18094,"moxi":0,"eventingAdminPort":0,"eventingSSL":0},"hostname":"svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com","alternateAddresses":null,"hasAlternateAddress":false}],"nodeLocator":null,"uuid":null,"ddocs":null,"vBucketServerMap":{"hashAlgorithm":"","numReplicas":0,"serverList":[],"vBucketMap":[],"vBucketMapForward":[]},"bucketCapabilitiesVer":null,"bucketCapabilities":null,"clusterCapabilitiesVer":[1,0],"clusterCapabilities":{"n1ql":["enhancedPreparedStatements"]},"vBucketMapChanged":false,"clusterNodesChanged":false}
+dbug: Couchbase.Core.Configuration.Server.ConfigHandler[0]
+      Checking svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 in polling.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op GetClusterConfig on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 44.
+dbug: Couchbase.Core.Configuration.Server.ConfigHandler[7000]
+      Receiving new map revision 185
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op SelectBucket on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key logs and opaque 41
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op SelectBucket on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key logs and opaque 42
+dbug: Couchbase.Core.ClusterContext[0]
+      Bootstrapping: fetching the config using CCCP for bucket logs.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op GetClusterConfig on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 46.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op GetClusterConfig on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 44
+dbug: Couchbase.Core.Configuration.Server.ConfigHandler[7000]
+      {"networkResolution":"auto","rev":185,"revEpoch":1,"name":"CLUSTER","uri":null,"streamingUri":null,"nodes":[],"nodesExt":[{"thisNode":false,"services":{"mgmt":8091,"mgmtSSL":18091,"indexAdmin":9100,"indexScan":9101,"indexHttp":9102,"indexStreamInit":9103,"indexStreamCatchup":9104,"indexStreamMaint":9105,"indexHttps":19102,"kv":11210,"kvSSL":11207,"capi":8092,"capiSSL":18092,"projector":9999,"n1ql":8093,"n1qlSSL":18093,"cbas":0,"cbasSSL":0,"fts":8094,"ftsSSL":18094,"moxi":0,"eventingAdminPort":0,"eventingSSL":0},"hostname":"svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com","alternateAddresses":null,"hasAlternateAddress":false},{"thisNode":true,"services":{"mgmt":8091,"mgmtSSL":18091,"indexAdmin":9100,"indexScan":9101,"indexHttp":9102,"indexStreamInit":9103,"indexStreamCatchup":9104,"indexStreamMaint":9105,"indexHttps":19102,"kv":11210,"kvSSL":11207,"capi":8092,"capiSSL":18092,"projector":9999,"n1ql":8093,"n1qlSSL":18093,"cbas":0,"cbasSSL":0,"fts":8094,"ftsSSL":18094,"moxi":0,"eventingAdminPort":0,"eventingSSL":0},"hostname":"svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com","alternateAddresses":null,"hasAlternateAddress":false},{"thisNode":false,"services":{"mgmt":8091,"mgmtSSL":18091,"indexAdmin":9100,"indexScan":9101,"indexHttp":9102,"indexStreamInit":9103,"indexStreamCatchup":9104,"indexStreamMaint":9105,"indexHttps":19102,"kv":11210,"kvSSL":11207,"capi":8092,"capiSSL":18092,"projector":9999,"n1ql":8093,"n1qlSSL":18093,"cbas":0,"cbasSSL":0,"fts":8094,"ftsSSL":18094,"moxi":0,"eventingAdminPort":0,"eventingSSL":0},"hostname":"svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com","alternateAddresses":null,"hasAlternateAddress":false}],"nodeLocator":null,"uuid":null,"ddocs":null,"vBucketServerMap":{"hashAlgorithm":"","numReplicas":0,"serverList":[],"vBucketMap":[],"vBucketMapForward":[]},"bucketCapabilitiesVer":null,"bucketCapabilities":null,"clusterCapabilitiesVer":[1,0],"clusterCapabilities":{"n1ql":["enhancedPreparedStatements"]},"vBucketMapChanged":false,"clusterNodesChanged":false}
+dbug: Couchbase.Core.Configuration.Server.ConfigHandler[0]
+      Waiting for 00:00:02.5000000 before polling.
+dbug: Couchbase.Core.Configuration.Server.ConfigHandler[7000]
+      Receiving new map revision 185
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op GetClusterConfig on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 46
+info: Couchbase.Core.ClusterContext[0]
+      Bootstrapping: created a membase bucket for logs.
+info: Couchbase.CouchbaseBucket[0]
+      Bootstrapping: server negotiation started for logs.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op GetCollectionsManifest on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 48.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op GetCollectionsManifest on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 48
+dbug: Couchbase.Core.ClusterNode[0]
+      Starting connection reinitialization on server svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Helo on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/13986a1b71fddd5f","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 50.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Helo on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/13986a1b71fddd5f","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 50
+dbug: Couchbase.Core.ClusterNode[0]
+      Starting connection reinitialization on server svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Helo on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/f8a646d738f9ec24","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 52.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Helo on svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/f8a646d738f9ec24","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 52
+info: Couchbase.Core.ClusterContext[0]
+      NetworkResolution [default] using default svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com
+dbug: Couchbase.Core.ClusterContext[0]
+      The node already exists for the endpoint svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207 using rev#216 for bucket logs.
+info: Couchbase.Core.ClusterContext[0]
+      NetworkResolution [default] using default svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com
+dbug: Couchbase.Core.ClusterContext[0]
+      Using existing node svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 for bucket logs using rev#216
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op SelectBucket on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key logs and opaque 53.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op SelectBucket on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key logs and opaque 54.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op SelectBucket on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key logs and opaque 53
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op SelectBucket on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key logs and opaque 54
+dbug: Couchbase.Core.ClusterNode[0]
+      Starting connection reinitialization on server svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Helo on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/c10eb892ca7b148f","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 56.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Helo on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/c10eb892ca7b148f","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 56
+dbug: Couchbase.Core.ClusterNode[0]
+      Starting connection reinitialization on server svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Helo on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/5d343fd99fb506cf","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 58.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Helo on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/5d343fd99fb506cf","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 58
+info: Couchbase.Core.ClusterContext[0]
+      NetworkResolution [default] using default svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com
+dbug: Couchbase.Core.ClusterContext[0]
+      Using existing node svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 for bucket logs using rev#216
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op SelectBucket on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key logs and opaque 60.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op SelectBucket on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key logs and opaque 59.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op SelectBucket on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key logs and opaque 59
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op SelectBucket on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key logs and opaque 60
+dbug: Couchbase.Core.ClusterNode[0]
+      Starting connection reinitialization on server svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Helo on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/02e664038968ad70","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 62.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Helo on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/02e664038968ad70","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 62
+dbug: Couchbase.Core.ClusterNode[0]
+      Starting connection reinitialization on server svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Helo on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/ead6df594e7a21bd","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 64.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Helo on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key {"i":"e5d43c38e43cd5a0/ead6df594e7a21bd","a":"couchbase-net-sdk/3.4.4.0 (clr/.NET 6.0.14) (os/Darwin 21.6.0 Darwin Kernel Version 21.6.0: Mon Dec 19 20:44:01 PST 2022; root:xnu-8020.240.18~2/RELEASE_X86_64)"} and opaque 64
+dbug: Couchbase.Core.ClusterContext[0]
+      ExistingEndpoints: svc-dqis-node-001.vginy-kxbifuq8dn.cloud.couchbase.com:11207, svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207, svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207, revision 216.
+dbug: Couchbase.Core.ClusterContext[0]
+      RemovedEndpoints: , revision 216
+info: Couchbase.CouchbaseBucket[0]
+      Bootstrapping: server negotiation completed for logs.
+dbug: Couchbase.CouchbaseBucket[1]
+      Fetching scope _default
+dbug: Couchbase.KeyValue.Scope[0]
+      Fetching collection _default.
+dbug: Couchbase.KeyValue.Scope[0]
+      Fetching collection _default.
+dbug: Couchbase.Core.ClusterNode[200]
+      CB: Current state is Closed.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op GetCidByName on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 66.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op GetCidByName on svc-dqis-node-003.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key  and opaque 66
+dbug: Couchbase.KeyValue.CouchbaseCollection[0]
+      Completed fetching CID for _default._default
+dbug: Couchbase.Core.ClusterNode[200]
+      CB: Current state is Closed.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Set on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key last_successful_timestamp and opaque 67.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Set on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key last_successful_timestamp and opaque 67
+dbug: Couchbase.Core.ClusterNode[200]
+      CB: Current state is Closed.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Get on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key last_successful_timestamp and opaque 68.
+dbug: Couchbase.Core.ClusterNode[103]
+      Completed executing op Get on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key last_successful_timestamp and opaque 68
+dbug: Couchbase.KeyValue.GetResult[0]
+      using the Couchbase.Core.IO.Transcoders.JsonTranscoder Transcoder.
+inline: {
+  "name": "UTC",
+  "time": "2023-03-17T16:16:58.991204+00:00"
+}
+access bucket (in method accessbucket):logs
+dbug: Couchbase.CouchbaseBucket[1]
+      Fetching scope _default
+dbug: Couchbase.KeyValue.Scope[0]
+      Fetching collection _default.
+dbug: Couchbase.KeyValue.Scope[0]
+      Fetching collection _default.
+dbug: Couchbase.Core.ClusterNode[200]
+      CB: Current state is Closed.
+dbug: Couchbase.Core.ClusterNode[100]
+      Executing op Set on svc-dqis-node-002.vginy-kxbifuq8dn.cloud.couchbase.com:11207 with key last_successful_timestamp and opaque 69.
+access bucket (in method accessbucket):render
+info: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Using the ChannelConnectionPool.
+access bucket (in method accessbucket):renderaudio

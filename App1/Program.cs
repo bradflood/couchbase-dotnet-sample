@@ -14,31 +14,21 @@ class CloudExample
     public async Task Main()
     {
 
+        var connection_string = Environment.GetEnvironmentVariable("cb_connection_string");
+        var userid = Environment.GetEnvironmentVariable("cb_userid");
         var password = Environment.GetEnvironmentVariable("cb_password");
 
         var clusterOptions = new ClusterOptions{
             ForceIpAsTargetHost = true
         }
-        .WithConnectionString("couchbases://cb.vginy-kxbifuq8dn.cloud.couchbase.com")
-        .WithCredentials(username: "launchpad", password: password)
+        .WithConnectionString("couchbases://"+connection_string)
+        .WithCredentials(username: userid, password: password)
         // .WithBuckets(bucketList)
         .WithLogging(LoggerFactory.Create(builder => { builder.AddFilter("Couchbase", LogLevel.Debug).AddConsole(); }));
 
         var cluster = await Couchbase.Cluster.ConnectAsync(
-            "couchbases://cb.vginy-kxbifuq8dn.cloud.couchbase.com", 
             clusterOptions)
         .ConfigureAwait(false);
-
-        var bucketName = "logs";
-        Console.WriteLine("access bucket (inline):" + bucketName);
-        var bucket = await cluster.BucketAsync(bucketName).ConfigureAwait(false);
-        var scope = await bucket.ScopeAsync("_default").ConfigureAwait(false);
-        var collection = await scope.CollectionAsync("_default").ConfigureAwait(false);
-    
-        // // Upsert Document
-        var upsertResult = await collection.UpsertAsync("last_successful_timestamp", new { Name = "UTC", Time = DateTime.UtcNow }).ConfigureAwait(false);
-        var getResult = await collection.GetAsync("last_successful_timestamp").ConfigureAwait(false);
-        Console.WriteLine("inline: " + getResult.ContentAs<dynamic>());
 
         await accessbucket(cluster, "logs");
         await accessbucket(cluster, "render");

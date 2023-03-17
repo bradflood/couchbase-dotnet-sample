@@ -13,17 +13,18 @@ class App2
 
     public async Task Main()
     {
+        var connection_string = Environment.GetEnvironmentVariable("cb_connection_string");
+        var userid = Environment.GetEnvironmentVariable("cb_userid");
         var password = Environment.GetEnvironmentVariable("cb_password");
 
         var clusterOptions = new ClusterOptions{
             ForceIpAsTargetHost = true
         }
-        .WithConnectionString("couchbases://cb.vginy-kxbifuq8dn.cloud.couchbase.com")
-        .WithCredentials(username: "launchpad", password: password)
+        .WithConnectionString("couchbases://"+connection_string)
+        .WithCredentials(username: userid, password: password)
         .WithLogging(LoggerFactory.Create(builder => { builder.AddFilter("Couchbase", LogLevel.Debug).AddConsole(); }));
 
         var cluster = await Couchbase.Cluster.ConnectAsync(
-            "couchbases://cb.vginy-kxbifuq8dn.cloud.couchbase.com", 
             clusterOptions)
         .ConfigureAwait(false);
 
