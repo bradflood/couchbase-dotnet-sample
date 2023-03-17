@@ -28,3 +28,5 @@ This introduces the use of ASP.NET and it's dependency injection framework
 
 dotnet new webapp -o WebApp1 --no-https -f net6.0
 dotnet watch
+
+WebApp1 works as expected - it updates the document "last_successful_timestamp" in buckets "logs" and "render"
