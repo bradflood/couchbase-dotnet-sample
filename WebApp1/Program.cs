@@ -12,6 +12,10 @@ var connection_string = Environment.GetEnvironmentVariable("cb_connection_string
 var userid = Environment.GetEnvironmentVariable("cb_userid");
 var password = Environment.GetEnvironmentVariable("cb_password");
 
+if (connection_string == null || userid ==null ||password == null) {
+    throw new Exception("couchbase connection information not provided");
+}
+Console.WriteLine("Couchbase connection string: " + connection_string +".. userid: " + userid);
 builder.Services.AddCouchbase(clusterOptions =>
     {
         clusterOptions.QueryTimeout = TimeSpan.FromSeconds(100);

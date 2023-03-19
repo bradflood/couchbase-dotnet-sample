@@ -17,29 +17,25 @@ public class Client1 : ICouchbaseSDKClient
     private ILogsBucketProvider logsBucketProvider;
     private IRenderBucketProvider renderBucketProvider;
 
-    private  IBucket logsBucket;
-    private  IBucket renderBucket;
-
-
     public  Client1(ILogsBucketProvider logsBucketProvider, IRenderBucketProvider renderBucketProvider) {
         this.logsBucketProvider = logsBucketProvider;
         this.renderBucketProvider = renderBucketProvider;
     }
     public async Task testLogsBucket(string value)
     {
-        Console.WriteLine("testLogsBucket:" + value);
-        if (logsBucket == null) {
-            logsBucket =  await logsBucketProvider.GetBucketAsync().ConfigureAwait(false);
-        }
+        Console.WriteLine("testLogsBucket:" + value + ". retrieving bucket");
+        var logsBucket =  await logsBucketProvider.GetBucketAsync().ConfigureAwait(false);
+        Console.WriteLine("testLogsBucket. calling accessbucket");
         await accessbucket(logsBucket);
+        Console.WriteLine("testLogsBucket. returned from call to accessbucket");
     }
     public async Task testRenderBucket(string value)
     {
-        Console.WriteLine("testRenderBucket:" + value);
-        if (renderBucket == null) {
-            renderBucket =  await renderBucketProvider.GetBucketAsync().ConfigureAwait(false);
-        }        
+        Console.WriteLine("testRenderBucket:" + value + ". retrieving bucket");
+        var renderBucket =  await renderBucketProvider.GetBucketAsync().ConfigureAwait(false);
+        Console.WriteLine("testRenderBucket. calling accessbucket");
         await accessbucket(renderBucket);
+        Console.WriteLine("testRenderBucket. returned from call to accessbucket");
 
     }
     private async Task accessbucket(IBucket bucket) {
