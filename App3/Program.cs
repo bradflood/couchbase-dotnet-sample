@@ -11,6 +11,13 @@ await new CloudExample().Main();
 class CloudExample
 {
 
+    /*
+    Note: 
+    App3 is an earlier version of App1, which initially didn't work. This is here for documentation purposes.
+    Note that the calls to accessbucket are not awaited. There are no compile-time or run-time errors.
+    
+    The call to accessBucket returns a Task. that is not awaited, so the code runs off, closes the application and doesn’t wait for them to finish. By simply pausing the main thread, the correct results are outputted:
+    */
     public async Task Main()
     {
 
@@ -40,10 +47,14 @@ class CloudExample
         var getResult = await collection.GetAsync("last_successful_timestamp");
         Console.WriteLine("inline: " + getResult.ContentAs<dynamic>());
 
-        // NOTE: by not awaiting the return of these method calls, the expected results are not obtained
+        // NOTE: by not awaiting the return of these method calls, the expected results are not obtained.
+        // the code runs off, closes the application and doesn’t wait for them to finish. 
         accessbucket(cluster, "logs");
         accessbucket(cluster, "render");
         accessbucket(cluster, "renderaudio");
+
+        //pause the main thread for 5s so the operations complete
+        //Thread.Sleep(5000);
 
     }
 
