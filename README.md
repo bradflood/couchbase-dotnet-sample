@@ -8,7 +8,19 @@ In the target capella database, there are three buckets: render, renderaudio and
 ## App1
 App1 upserts a single document entitled "last_successful_timestamp" into all three buckets, via a method call. The file run.out contains debug level output. 
 
-App1 works as expected - the documents are inserted into each of the three buckets, and the UTC timestamp is updated upon successive executions.
+On MacOS and Amazon Linux 2, App1 works as expected - the documents are inserted into each of the three buckets, and the UTC timestamp is updated upon successive executions.
+
+On Windows, App1 works as long as there is no AppService. When an AppService is created, the connections fail with error
+Unhandled exception. System.Security.Authentication.AuthenticationException: Authentication failed because the remote party sent a TLS alert: 'InternalError'.
+ ---> System.ComponentModel.Win32Exception (0x80090326): The message received was unexpected or badly formatted.
+   --- End of inner exception stack trace ---
+   at Couchbase.Core.ClusterContext.GetOrCreateBucketAsync(String name)
+   at CloudExample.accessbucket(ICluster cluster, String bucketName) in C:\Users\L50\git\couchbase-dotnet-sample\App1\Program.cs:line 41
+   at CloudExample.Main() in C:\Users\L50\git\couchbase-dotnet-sample\App1\Program.cs:line 34
+   at Program.<Main>$(String[] args) in C:\Users\L50\git\couchbase-dotnet-sample\App1\Program.cs:line 9
+   at Program.<Main>(String[] args)
+
+
 
 
 ## App2
