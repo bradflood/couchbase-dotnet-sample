@@ -70,20 +70,35 @@ class CloudExample
 
         // health check
         {
+            Console.WriteLine("*** health check ***");
             var path = "app_endpoint_renderaudio/";
             var response = _httpClient.GetAsync(path).GetAwaiter().GetResult();
             Console.WriteLine("path: " + path +". response:" + response);
         }
 
-        // var documentKey = "audio::e0332496-f776-46d7-ae5c-7de24cb07ed6";
-        var documentKey = "test-add-attachment";
+        // Guid guid = Guid.NewGuid();
+        string guid = "318e7eb0-ef06-4e0c-8c05-6015d24b90f1";
+        var documentKey = "test-add-attachment-"+guid;
         var stringAttachmentName = "blob%2Ftext";
         var audioAttachmentName = "blob%2Fimage";
         var inputFilename = "input.opus";
         var outputFilename = "output.opus";
 
-
         string revision ;
+
+        // {
+        //     Console.WriteLine("*** create new document ***");
+        //     var path = $"app_endpoint_renderaudio/{documentKey}";
+        //     var body = "{\"Type\": \"test\"}";
+
+        //     var content = new StringContent(body);
+        //     var response = _httpClient.PutAsync(path,content).GetAwaiter().GetResult();
+        //     Console.WriteLine("path: " + path +". response:" + response);
+        //     check("create new document", response);
+        //     revision = response.Headers.ETag?.Tag.Trim('"');
+
+        // }
+
         {
             // get latest revision
             var path = $"app_endpoint_renderaudio/{documentKey}?revs_limit=1";
@@ -98,7 +113,7 @@ class CloudExample
             // add attachment
             var path = $"app_endpoint_renderaudio/{documentKey}/{stringAttachmentName}?rev="+revision;
 
-            byte[] bytes = Encoding.ASCII.GetBytes("this is a string");
+            byte[] bytes = Encoding.ASCII.GetBytes("this is a string - " + guid);
 
             var byteContent = new ByteArrayContent(bytes);
             byteContent.Headers.Add("Content-Type", "text/example");
@@ -125,7 +140,6 @@ class CloudExample
             // add attachment
             var path = $"app_endpoint_renderaudio/{documentKey}/{audioAttachmentName}?rev="+revision;
 
-            // byte[] bytes = Encoding.ASCII.GetBytes("this is a string");
             byte[] bytes = File.ReadAllBytes(inputFilename);
 
             var byteContent = new ByteArrayContent(bytes);
@@ -133,6 +147,7 @@ class CloudExample
 
             var response = _httpClient.PutAsync(path, byteContent).GetAwaiter().GetResult();
             Console.WriteLine("path: " + path +". byteContent headers: "+byteContent.Headers +". response:" + response);
+            check("add audio attachment", response);
             revision = response.Headers.ETag?.Tag.Trim('"');            
         }
 
@@ -173,6 +188,13 @@ class CloudExample
         var upsertResult = await collection.UpsertAsync("last_successful_timestamp", new { Name = "UTC", Time = utcNow }).ConfigureAwait(false);
         var getResult = await collection.GetAsync("last_successful_timestamp").ConfigureAwait(false);
         Console.WriteLine("method call result for " + bucketName + "..." + getResult.ContentAs<dynamic>());
+    }
+
+    private void check(string action, HttpResponseMessage response) {
+       if (!response.IsSuccessStatusCode){
+          Console.WriteLine(action + " failed. exiting");
+          Environment.Exit(1);
+       }
     }
 
 }
