@@ -16,6 +16,9 @@ await new CloudExample().Main();
 
 class CloudExample
 {
+    private  HttpClient _httpClient;
+    private readonly string audioAttachmentName = "blob%2Fimage";
+
 
     public async Task Main()
     {
@@ -38,18 +41,6 @@ class CloudExample
             clusterOptions)
         .ConfigureAwait(false);
 
-        // await accessbucket(cluster, "logs");
-        // await accessbucket(cluster, "render");
-        await accessbucket(cluster, "renderaudio");
-
-        await addAttachment();
-
-    }
-
-
-
-    private async Task addAttachment()
-    {
         var sg_connection_string = Environment.GetEnvironmentVariable("sg_connection_string");
         var sg_userid = Environment.GetEnvironmentVariable("sg_userid");
         var sg_password = Environment.GetEnvironmentVariable("sg_password");  
@@ -59,7 +50,7 @@ class CloudExample
         {
             ServerCertificateCustomValidationCallback = (message, certificate2, arg3, arg4) => true,
         };
-        var _httpClient = new HttpClient(httpClientHandler)
+        _httpClient = new HttpClient(httpClientHandler)
         { BaseAddress = new Uri(sg_connection_string) };
         _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
         _httpClient.DefaultRequestHeaders.Add("User-Agent", "foozy");
@@ -68,6 +59,19 @@ class CloudExample
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", base64);        
         _httpClient.Timeout = TimeSpan.FromSeconds(60);
 
+
+        await accessbucket(cluster, "renderaudio");
+
+        await addAttachment();
+
+        //retrieveDocument(_httpClient, "test-add-attachment-318e7eb0-ef06-4e0c-8c05-6015d24b90f1", "3-d424456353a5dc887070ea0fb8d96081", "audio");
+
+    }
+
+
+
+    private async Task addAttachment()
+    {
         // health check
         {
             Console.WriteLine("*** health check ***");
@@ -80,7 +84,6 @@ class CloudExample
         string guid = "318e7eb0-ef06-4e0c-8c05-6015d24b90f1";
         var documentKey = "test-add-attachment-"+guid;
         var stringAttachmentName = "blob%2Ftext";
-        var audioAttachmentName = "blob%2Fimage";
         var inputFilename = "input.opus";
         var outputFilename = "output.opus";
 
@@ -195,6 +198,31 @@ class CloudExample
           Console.WriteLine(action + " failed. exiting");
           Environment.Exit(1);
        }
+    }
+
+    private bool retrieveDocument(HttpClient client, string documentKey, string revision, string attachmentName) {
+                {
+            Console.WriteLine("*** retrieve document with audio attachment ***");
+            // add attachment
+            var path = $"app_endpoint_renderaudio/{documentKey}/{attachmentName}?rev="+revision;
+
+            var response = client.GetAsync(path).GetAwaiter().GetResult();
+            Console.WriteLine("path: " + path +". response:" + response);
+            Console.WriteLine("content: " + response.Content); 
+            // var attachmentByteArray = response.Content.ReadAsStreamAsync().Result; 
+            var attachmentByteArray = response.Content.ReadAsByteArrayAsync().Result; 
+
+
+            // Create the file, or overwrite if the file exists.
+            string outputFilename = $"{documentKey}_{revision}.opus";
+            using (FileStream fs = File.Create(outputFilename))
+            {
+                fs.Write(attachmentByteArray, 0, attachmentByteArray.Length);   
+                // File.WriteAllBytes("./attachment.txt", attachmentByteArray);                   
+                Console.WriteLine("attachment contents written to file: " + fs.Name);       
+            }              
+        }
+        return true ;
     }
 
 }

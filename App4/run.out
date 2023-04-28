@@ -1,0 +1,95 @@
+info: Couchbase.Core.ClusterContext[0]
+      Successfully retrieved DNS SRV entries: [svc-dqis-node-001.silsift54onkyeeq.cloud.couchbase.com:11207,svc-dqis-node-002.silsift54onkyeeq.cloud.couchbase.com:11207,svc-dqis-node-003.silsift54onkyeeq.cloud.couchbase.com:11207]
+info: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Using the ChannelConnectionPool.
+info: Couchbase.Core.ClusterContext[0]
+      NetworkResolution [default] using default svc-dqis-node-001.silsift54onkyeeq.cloud.couchbase.com
+info: Couchbase.Core.ClusterContext[0]
+      Bootstrapping: initializing global bootstrap node [svc-dqis-node-001.silsift54onkyeeq.cloud.couchbase.com:11207].
+info: Couchbase.Core.ClusterContext[0]
+      NetworkResolution [default] using default svc-dqis-node-002.silsift54onkyeeq.cloud.couchbase.com
+info: Couchbase.Core.ClusterContext[0]
+      Bootstrapping: initializing a global non-bootstrap node [svc-dqis-node-002.silsift54onkyeeq.cloud.couchbase.com:11207]
+info: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Using the ChannelConnectionPool.
+info: Couchbase.Core.ClusterContext[0]
+      NetworkResolution [default] using default svc-dqis-node-003.silsift54onkyeeq.cloud.couchbase.com
+info: Couchbase.Core.ClusterContext[0]
+      Bootstrapping: initializing a global non-bootstrap node [svc-dqis-node-003.silsift54onkyeeq.cloud.couchbase.com:11207]
+info: Couchbase.Core.IO.Connections.Channels.ChannelConnectionPool[0]
+      Using the ChannelConnectionPool.
+info: Couchbase.Query.QueryClient[0]
+      Enabling Enhanced Prepared Statements
+Base64: cmVtb3RlX2RiOlBhc3N3b3JkMTIzIQ==
+access bucket (in method accessbucket):renderaudio
+info: Couchbase.Core.ClusterContext[0]
+      Bootstrapping: created a membase bucket for renderaudio.
+info: Couchbase.CouchbaseBucket[0]
+      Bootstrapping: server negotiation started for renderaudio.
+info: Couchbase.Core.ClusterContext[0]
+      NetworkResolution [default] using default svc-dqis-node-001.silsift54onkyeeq.cloud.couchbase.com
+info: Couchbase.Core.ClusterContext[0]
+      NetworkResolution [default] using default svc-dqis-node-002.silsift54onkyeeq.cloud.couchbase.com
+info: Couchbase.Core.ClusterContext[0]
+      NetworkResolution [default] using default svc-dqis-node-003.silsift54onkyeeq.cloud.couchbase.com
+info: Couchbase.CouchbaseBucket[0]
+      Bootstrapping: server negotiation completed for renderaudio.
+method call result for renderaudio...{
+  "name": "UTC",
+  "time": "2023-04-21T17:03:30.680501+00:00"
+}
+*** health check ***
+path: app_endpoint_renderaudio/. response:StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.HttpConnectionResponseContent, Headers:
+{
+  Date: Fri, 21 Apr 2023 17:03:31 GMT
+  Connection: keep-alive
+  Server: Couchbase Sync Gateway/3.0.5 EE
+  Content-Type: application/json
+  Content-Length: 249
+}
+path: app_endpoint_renderaudio/test-add-attachment-318e7eb0-ef06-4e0c-8c05-6015d24b90f1?revs_limit=1. response:StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.HttpConnectionResponseContent, Headers:
+{
+  Date: Fri, 21 Apr 2023 17:03:32 GMT
+  Connection: keep-alive
+  ETag: "4-8c8a429e2478b04f0916a2aa95377cb1"
+  Server: Couchbase Sync Gateway/3.0.5 EE
+  Content-Type: application/json
+  Content-Length: 396
+}
+*** add string attachment ***
+path: app_endpoint_renderaudio/test-add-attachment-318e7eb0-ef06-4e0c-8c05-6015d24b90f1/blob%2Ftext?rev=4-8c8a429e2478b04f0916a2aa95377cb1. byteContent headers: Content-Type: text/example
+Content-Length: 55
+. response:StatusCode: 201, ReasonPhrase: 'Created', Version: 1.1, Content: System.Net.Http.HttpConnectionResponseContent, Headers:
+{
+  Date: Fri, 21 Apr 2023 17:03:32 GMT
+  Connection: keep-alive
+  ETag: "5-656b4df6b76addfdd19e0cfb25b0ca3e"
+  Server: Couchbase Sync Gateway/3.0.5 EE
+  Content-Type: application/json
+  Content-Length: 118
+}
+*** retrieve document with string attachment ***
+path: app_endpoint_renderaudio/test-add-attachment-318e7eb0-ef06-4e0c-8c05-6015d24b90f1/blob%2Ftext?rev=5-656b4df6b76addfdd19e0cfb25b0ca3e. response:StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.HttpConnectionResponseContent, Headers:
+{
+  Date: Fri, 21 Apr 2023 17:03:32 GMT
+  Connection: keep-alive
+  Accept-Ranges: bytes
+  ETag: "sha1-0vu3QIvmkRcvDhpMqgRCmzwuNlk="
+  Server: Couchbase Sync Gateway/3.0.5 EE
+  Content-Type: text/example
+  Content-Length: 55
+}
+content: System.Net.Http.HttpConnectionResponseContent
+string attachment contents: this is a string - 318e7eb0-ef06-4e0c-8c05-6015d24b90f1
+*** add audio attachment ***
+path: app_endpoint_renderaudio/test-add-attachment-318e7eb0-ef06-4e0c-8c05-6015d24b90f1/blob%2Fimage?rev=5-656b4df6b76addfdd19e0cfb25b0ca3e. byteContent headers: Content-Type: audio/opus
+Content-Length: 83671
+. response:StatusCode: 403, ReasonPhrase: 'Forbidden', Version: 1.1, Content: System.Net.Http.HttpConnectionResponseContent, Headers:
+{
+  Server: awselb/2.0
+  Date: Fri, 21 Apr 2023 17:03:32 GMT
+  Connection: keep-alive
+  Content-Type: text/html
+  Content-Length: 118
+}
+add audio attachment failed. exiting
