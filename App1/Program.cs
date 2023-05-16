@@ -19,7 +19,9 @@ class CloudExample
         var password = Environment.GetEnvironmentVariable("cb_password");
 
         var clusterOptions = new ClusterOptions{
-            ForceIpAsTargetHost = true
+            ForceIpAsTargetHost = true,
+            HttpIgnoreRemoteCertificateMismatch = true,
+            KvIgnoreRemoteCertificateNameMismatch = true
         }
         .WithConnectionString("couchbases://"+connection_string)
         .WithCredentials(username: userid, password: password)
