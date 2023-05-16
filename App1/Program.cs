@@ -20,8 +20,7 @@ class CloudExample
 
         var clusterOptions = new ClusterOptions{
             ForceIpAsTargetHost = true,
-            HttpIgnoreRemoteCertificateMismatch = true,
-            KvIgnoreRemoteCertificateNameMismatch = true
+            KvIgnoreRemoteCertificateNameMismatch = true // development only. do not include in any production configuration
         }
         .WithConnectionString("couchbases://"+connection_string)
         .WithCredentials(username: userid, password: password)
