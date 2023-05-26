@@ -35,7 +35,7 @@ class CloudExample
         }
         .WithConnectionString("couchbases://" + connection_string)
         .WithCredentials(username: userid, password: password)
-        .WithLogging(LoggerFactory.Create(builder => { builder.AddFilter("Couchbase", LogLevel.Information).AddConsole(); }));
+        .WithLogging(LoggerFactory.Create(builder => { builder.AddFilter("Couchbase", LogLevel.Debug).AddConsole(); }));
 
         var cluster = await Couchbase.Cluster.ConnectAsync(
             clusterOptions)
@@ -50,8 +50,9 @@ class CloudExample
         {
             ServerCertificateCustomValidationCallback = (message, certificate2, arg3, arg4) => true,
         };
-        _httpClient = new HttpClient(httpClientHandler)
-        { BaseAddress = new Uri(sg_connection_string) };
+        _httpClient = new HttpClient(httpClientHandler) { 
+            BaseAddress = new Uri(sg_connection_string) 
+        };
         _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
         _httpClient.DefaultRequestHeaders.Add("User-Agent", "foozy");
         var base64 = Convert.ToBase64String(Encoding.ASCII.GetBytes($"{sg_userid}:{sg_password}"));
@@ -59,6 +60,8 @@ class CloudExample
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", base64);        
         _httpClient.Timeout = TimeSpan.FromSeconds(60);
 
+        var response = _httpClient.GetAsync("render/").GetAwaiter().GetResult();
+       Console.WriteLine("request: " + response.RequestMessage +".. response " + response);
 
         await accessbucket(cluster, "renderaudio");
 
@@ -75,7 +78,7 @@ class CloudExample
         // health check
         {
             Console.WriteLine("*** health check ***");
-            var path = "app_endpoint_renderaudio/";
+            var path = "renderaudio/";
             var response = _httpClient.GetAsync(path).GetAwaiter().GetResult();
             Console.WriteLine("path: " + path +". response:" + response);
         }
@@ -104,9 +107,9 @@ class CloudExample
 
         {
             // get latest revision
-            var path = $"app_endpoint_renderaudio/{documentKey}?revs_limit=1";
+            var path = $"renderaudio/{documentKey}?revs_limit=1";
             var response = _httpClient.GetAsync(path).GetAwaiter().GetResult();
-            Console.WriteLine("path: " + path +". response:" + response);
+            Console.WriteLine("SYNC GATEWAY CALL path: " + path +". response:" + response);
             revision = response.Headers.ETag?.Tag.Trim('"');
 
         }
@@ -114,7 +117,7 @@ class CloudExample
         {
             Console.WriteLine("*** add string attachment ***");
             // add attachment
-            var path = $"app_endpoint_renderaudio/{documentKey}/{stringAttachmentName}?rev="+revision;
+            var path = $"renderaudio/{documentKey}/{stringAttachmentName}?rev="+revision;
 
             byte[] bytes = Encoding.ASCII.GetBytes("this is a string - " + guid);
 
@@ -122,16 +125,16 @@ class CloudExample
             byteContent.Headers.Add("Content-Type", "text/example");
 
             var response = _httpClient.PutAsync(path, byteContent).GetAwaiter().GetResult();
-            Console.WriteLine("path: " + path +". byteContent headers: "+byteContent.Headers +". response:" + response);
+            Console.WriteLine("SYNC GATEWAY CALL path: " + path +". byteContent headers: "+byteContent.Headers +". response:" + response);
             revision = response.Headers.ETag?.Tag.Trim('"');            
         }
         {
             Console.WriteLine("*** retrieve document with string attachment ***");
             // add attachment
-            var path = $"app_endpoint_renderaudio/{documentKey}/{stringAttachmentName}?rev="+revision;
+            var path = $"renderaudio/{documentKey}/{stringAttachmentName}?rev="+revision;
 
             var response = _httpClient.GetAsync(path).GetAwaiter().GetResult();
-            Console.WriteLine("path: " + path +". response:" + response);
+            Console.WriteLine("SYNC GATEWAY CALL path: " + path +". response:" + response);
             Console.WriteLine("content: " + response.Content); 
             var attachmentByteArray = response.Content.ReadAsByteArrayAsync().Result; 
 
@@ -141,7 +144,7 @@ class CloudExample
         {
             Console.WriteLine("*** add audio attachment ***");
             // add attachment
-            var path = $"app_endpoint_renderaudio/{documentKey}/{audioAttachmentName}?rev="+revision;
+            var path = $"renderaudio/{documentKey}/{audioAttachmentName}?rev="+revision;
 
             byte[] bytes = File.ReadAllBytes(inputFilename);
 
@@ -149,7 +152,7 @@ class CloudExample
             byteContent.Headers.Add("Content-Type", "audio/opus");
 
             var response = _httpClient.PutAsync(path, byteContent).GetAwaiter().GetResult();
-            Console.WriteLine("path: " + path +". byteContent headers: "+byteContent.Headers +". response:" + response);
+            Console.WriteLine("SYNC GATEWAY CALL path: " + path +". byteContent headers: "+byteContent.Headers +". response:" + response);
             check("add audio attachment", response);
             revision = response.Headers.ETag?.Tag.Trim('"');            
         }
@@ -157,10 +160,10 @@ class CloudExample
         {
             Console.WriteLine("*** retrieve document with audio attachment ***");
             // add attachment
-            var path = $"app_endpoint_renderaudio/{documentKey}/{audioAttachmentName}?rev="+revision;
+            var path = $"renderaudio/{documentKey}/{audioAttachmentName}?rev="+revision;
 
             var response = _httpClient.GetAsync(path).GetAwaiter().GetResult();
-            Console.WriteLine("path: " + path +". response:" + response);
+            Console.WriteLine("SYNC GATEWAY CALL path: " + path +". response:" + response);
             Console.WriteLine("content: " + response.Content); 
             // var attachmentByteArray = response.Content.ReadAsStreamAsync().Result; 
             var attachmentByteArray = response.Content.ReadAsByteArrayAsync().Result; 
@@ -194,6 +197,7 @@ class CloudExample
     }
 
     private void check(string action, HttpResponseMessage response) {
+       Console.WriteLine("request: " + response.RequestMessage +".. response " + response);
        if (!response.IsSuccessStatusCode){
           Console.WriteLine(action + " failed. exiting");
           Environment.Exit(1);
@@ -204,7 +208,7 @@ class CloudExample
                 {
             Console.WriteLine("*** retrieve document with audio attachment ***");
             // add attachment
-            var path = $"app_endpoint_renderaudio/{documentKey}/{attachmentName}?rev="+revision;
+            var path = $"renderaudio/{documentKey}/{attachmentName}?rev="+revision;
 
             var response = client.GetAsync(path).GetAwaiter().GetResult();
             Console.WriteLine("path: " + path +". response:" + response);
