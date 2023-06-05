@@ -33,6 +33,15 @@ App3 is an earlier version of App1, which initially didn't work. This is here fo
 
 Note that the calls to accessbucket are not awaited. **There are no compile-time or run-time errors, but the calls do not update the timestamps!**
 
+## App4
+App4 builds on App1 and App2 to reproduce a Render use case in simpler form, by adding an attachment to an existing document. 
+
+The attachment is greater than 8k, which requires a WAF rule modification in the associated database, via Couchbase support.
+The attachment happens to be an audio file, but I haven't tried to determine if that matters; I believe the 8k limit applies to attachments of any content type.
+
+## App5
+App5 represents a simplification of a second Render use case -- adding Sync Gateway users to three buckets
+
 ## WebApp1
 WebApp1 builds on the success of App1, extending it to include the Couchbase Dependency Injection (DI) extension. This more closely matches Launchpad. 
 
