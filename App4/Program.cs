@@ -32,7 +32,7 @@ class CloudExample
         var clusterOptions = new ClusterOptions
         {
             ForceIpAsTargetHost = true,
-            KvIgnoreRemoteCertificateNameMismatch = true // development only. do not include in any production configuration
+            // KvIgnoreRemoteCertificateNameMismatch = true // development only. do not include in any production configuration
         }
         .WithConnectionString(connection_string)
         .WithCredentials(username: userid, password: password)
